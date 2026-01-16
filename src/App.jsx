@@ -10,16 +10,27 @@ import ListQueuePage from "./pages/ListQueuePage";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<TakeQueuePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="list-antrian" element={<ListQueuePage />} />
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<DashboardPage />} />
-          {/* Child Routes */}
-          <Route path="panggil-antrian" element={<PanggilAntrianPage />} />
-        </Route>
-      </Routes>
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<TakeQueuePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/list-antrian" element={<ListQueuePage />} />
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<DashboardPage />} />
+              <Route
+                path="panggil-antrian"
+                element={<PanggilAntrianPage />}
+              />
+            </Route>
+          </Routes>
+        </div>
+
+        {/* Footer */}
+        <footer className="text-center text-sm text-gray-400 py-4">
+          © {new Date().getFullYear()} Marsha Septa – Web Programming Project
+        </footer>
+      </div>
     </Router>
   );
 }
