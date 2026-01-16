@@ -13,4 +13,4 @@ npm install
 npm run dev  
 
 ## Author
-Made by Marsha Sept
+Made by Marsha Septa
